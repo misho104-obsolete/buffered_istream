@@ -59,7 +59,7 @@ std::string buffered_istream::next(){
   char s;
   bool ignore = false;
   while(true){
-    s = ist->get();
+    ist->get(s);
     if(ist->eof()) break;
     if((flag & flags::sharp_comment)){
       if(s == '#'){
